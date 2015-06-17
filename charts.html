@@ -97,11 +97,30 @@
 </div>
     <div class="container section">
     <div class="row">
+    <div class="col s12 m9 l10">
+    <div id="charts" class="section scrollspy">
+        <h2 class="header">Bar Charts</h2>
+        <p class="caption">The charts displayed below are plotted using the library c3.js. It uses d3.js as its only dependency. d3.js is an advanced charting library used in various scientific applications. These are highly customisable too. </p>
+        </div>
+      </div>
         <div class="col s12 m6 l6">
           <div class="card">
             <div class="card-content white-text">
               <span class="card-title black-text">Revenue</span>
               <div id="chart"></div>
+            </div>
+            <div class="card-action">
+              <a class="black-text" href="#">This is a link</a>
+              <a class="black-text" href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m6 l6">
+          <div class="card">
+            <div class="card-content white-text">
+              <span class="card-title black-text">Loss</span>
+              <div id="chart1"></div>
             </div>
             <div class="card-action">
               <a class="black-text" href="#">This is a link</a>
@@ -144,6 +163,37 @@
 		  ]
 		}
 	});
+	
+	var chart = c3.generate({
+    bindto: '#chart1',
+    data: {
+      columns: [
+        ['data1', 30, 200, 100, 400, 150, 250],
+        ['data2', 50, 20, 10, 40, 15, 25]
+      ],
+      axes: {
+        data2: 'y2'
+      },
+      types: {
+        data2: 'bar' // ADD
+      }
+    },
+    axis: {
+      y: {
+        label: {
+          text: 'Y Label',
+          position: 'outer-middle'
+        }
+      },
+      y2: {
+        show: true,
+        label: {
+          text: 'Y2 Label',
+          position: 'outer-middle'
+        }
+      }
+    }
+});
     </script>
   </body>
 </html>
