@@ -17,15 +17,11 @@
     <link href="css/prism.css" rel="stylesheet">
     <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="chart/c3.css" rel="stylesheet">
     
   </head>
   <body>
     <header>
-      <nav class="top-nav">
-        <div class="container">
-          <div class="nav-wrapper"><a class="page-title">Blank</a></div>
-        </div>
-      </nav>
       <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
         <li class="logo"><a id="logo-container" href="index.html" class="brand-logo">
@@ -84,21 +80,32 @@
               </div>
             </li>
           </ul>
-        </li><li class="bold active"><a href="blank.html" class="waves-effect waves-orange">Blank</a></li>
+        </li><li class="bold active"><a href="blank.html" class="waves-effect waves-orange">Charts</a></li>
       </ul>
     </header>
     <main>
+    <div class="section" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <h1 class="header center-on-small-only">Charts</h1>
+        <h4 class ="light red-text text-lighten-4 center-on-small-only">Charts are the simplest way to visualize your online, offline, and user-generated data.</h4>
+      </div>
+      
+    </div>
+  </div>
+</div>
     <div class="container section">
     <div class="row">
-        <div class="col s12 m6 l9">
-          <div class="card blue-grey darken-1">
+        <div class="col s12 m6 l6">
+          <div class="card">
             <div class="card-content white-text">
-              <span class="card-title">Revenue</span>
-              <div id="line-example"></div>
+              <span class="card-title black-text">Revenue</span>
+              <div id="chart"></div>
             </div>
             <div class="card-action">
-              <a class="white-text" href="#">This is a link</a>
-              <a class="white-text" href="#">This is a link</a>
+              <a class="black-text" href="#">This is a link</a>
+              <a class="black-text" href="#">This is a link</a>
             </div>
           </div>
         </div>
@@ -125,8 +132,18 @@
     <script src="js/jquery.nicescroll.js"></script>
     <script src="js/nicescroll_customization.js"></script>
     <!-- Chart-->
-    <script src="chart/.js"></script>
-    
+    <script src="chart/d3.js"></script>
+    <script src="chart/c3.js"></script>
+    <script type="text/javascript">
+		var chart = c3.generate({
+		bindto: '#chart',
+		data: {
+		  columns: [
+			['data1', 30, 200, 100, 400, 150, 250],
+			['data2', 50, 20, 10, 40, 15, 25]
+		  ]
+		}
+	});
     </script>
   </body>
 </html>
