@@ -160,9 +160,22 @@
 
         </div>
         <div class="divider"></div>
-        
       </div>
-
+	  <style>
+      #pageup {
+        position: fixed;
+        right: 40px;
+        bottom: 60px;
+        width: 48px;
+        height: 48px;
+        background-image: url(../img/up.png);
+        background-repeat: no-repeat;
+        background-size: 48px 48px;
+        display: none;
+        cursor: pointer;
+      }
+      </style>
+      <div id="pageup"></div>
 
     </main>    
     <footer class="page-footer">
@@ -186,5 +199,17 @@
     <!-- NiceScroll -->
     <script src="js/jquery.nicescroll.js"></script>
     <script src="js/nicescroll_customization.js"></script>
+    <!-- ScrollToTop -->
+    <script src="scroll/jquery.pageup.js"></script>
+	<script type="text/javascript">
+		$("#pageup").pageup({
+		// offset to display the scroll to top button
+		offset: 100,
+		// fade animation delay
+		fadeDelay: 500,
+		// scroll speed
+		scrollDuration: 400
+		});
+    </script>
   </body>
 </html>
